@@ -20,18 +20,19 @@ IMAGESDIR = images
 # Sources
 SRCS_INDEP = grid.c state.c king.c network.c client.c server.c output-common.c path.c main-common.c
 SRCS_NCURSES = output.c main.c 
-SRCS_SDL = output-sdl.c main-sdl.c
+#SRCS_SDL = output-sdl.c main-sdl.c
 
 HDRS_INDEP = common.h messaging.h $(SRCS_INDEP:.c=.h)
 HDRS_NCURSES = output.h
-HDRS_SDL = output-sdl.h
+#HDRS_SDL = output-sdl.h
 
 OBJS_INDEP = $(SRCS_INDEP:.c=.o)
 OBJS_NCURSES = $(SRCS_NCURSES:.c=.o)
-OBJS_SDL = $(SRCS_SDL:.c=.o)
+#OBJS_SDL = $(SRCS_SDL:.c=.o)
 
 EXECS = $(EXEC_NCURSES) $(EXEC_SDL)
-CFLAGS += -Wall -O2
+#CFLAGS += -Wall -O2
+CFLAGS += -march=native -O3 -pipe
 LDLIBS += -lm
 
 # Common sources and header
