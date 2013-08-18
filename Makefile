@@ -31,8 +31,8 @@ OBJS_NCURSES = $(SRCS_NCURSES:.c=.o)
 #OBJS_SDL = $(SRCS_SDL:.c=.o)
 
 EXECS = $(EXEC_NCURSES) $(EXEC_SDL)
-#CFLAGS += -Wall -O2
-CFLAGS += -march=native -O3 -pipe
+#CFLAGS += me-pointer-Wall -O2
+CFLAGS += -march=native -msse2 -fomit-frame-pointer -Os -pipe
 LDLIBS += -lm
 
 # Common sources and header
